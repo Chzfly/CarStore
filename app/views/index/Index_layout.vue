@@ -2,7 +2,7 @@
     <div>
         <Layout>
             <Header>
-                <Menu mode="horizontal" theme="dark" @on-select="selectHandler">
+                <Menu mode="horizontal" theme="dark" @on-select="selectHandler" :active-name="columnName">
                     <div class="layout-logo">
                         <img src="/images/logo.png" alt="">
                     </div>
@@ -38,6 +38,11 @@
 
 <script>
     export default {
+        computed: {
+            columnName(){
+                return this.$store.state.routerStore.columnName;
+            }
+        },
         methods: {
             selectHandler (name){
                 this.$router.push({name});

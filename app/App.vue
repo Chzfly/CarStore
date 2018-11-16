@@ -1,6 +1,5 @@
 <template>
     <div>
-        我是根组件App
         <router-view></router-view>
     </div>
 </template>

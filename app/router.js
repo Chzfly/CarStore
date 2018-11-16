@@ -93,7 +93,12 @@ export default (store) => {
             store.commit('routerStore/changeColumnName', {
                 name : to.fullPath.match(/\/index\/(\w+)/)[1]
             });
-            
+        }
+        //匹配路由跳转的目标点，如果符合2级栏目则进行2级栏目跳转
+        if(/\/index\/\w+\/(\w+)/.test(to.fullPath)){
+            store.commit('routerStore/changeColumnName2nd', {
+                name : to.fullPath.match(/\/index\/\w+\/(\w+)/)[1]
+            });
         }
     });
 

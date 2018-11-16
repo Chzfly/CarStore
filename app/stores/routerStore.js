@@ -2,7 +2,7 @@ export default {
     namespaced: true,
     state: {
         columnName: "",
-        columnName2nd: ""
+        columnName2nd: "carlist"
     },
     mutations: {
         changeColumnName(state, {name}){
