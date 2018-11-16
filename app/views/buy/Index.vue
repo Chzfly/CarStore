@@ -1,6 +1,6 @@
 <template>
     <div>
-        我是根组件App
+        我是买车组件(我会默认展示汽车列表组件)
         <router-view></router-view>
     </div>
 </template>

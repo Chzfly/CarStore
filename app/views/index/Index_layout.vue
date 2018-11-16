@@ -2,7 +2,7 @@
     <div>
         <Layout>
             <Header>
-                <Menu mode="horizontal" theme="dark">
+                <Menu mode="horizontal" theme="dark" @on-select="selectHandler">
                     <div class="layout-logo">
                         <img src="/images/logo.png" alt="">
                     </div>
@@ -31,14 +31,18 @@
                 </Menu>
             </Header>
         </Layout>
-            我是index_layout
-            <!-- <router-view></router-view> -->
+        
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
     export default {
-        
+        methods: {
+            selectHandler (name){
+                this.$router.push({name});
+            }
+        }
     }
 </script>
 
@@ -61,8 +65,11 @@
         left: 20px;
     }
     .layout-nav{
-        width: 480px;
+        width: 580px;
         margin: 0 auto;
         margin-right: 20px;
+    }
+    .ivu-menu-horizontal .ivu-menu-item{
+        font-size:20px;
     }
 </style>

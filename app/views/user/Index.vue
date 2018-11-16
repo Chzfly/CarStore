@@ -1,7 +1,6 @@
 <template>
     <div>
-        我是根组件App
-        <router-view></router-view>
+        我是用户组件
     </div>
 </template>
 

@@ -1,7 +1,6 @@
 <template>
     <div>
-        我是根组件App
-        <router-view></router-view>
+        我是汽车列表组件（我是亲儿子，我爸爸会默认展示我）
     </div>
 </template>
 

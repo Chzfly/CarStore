@@ -23,6 +23,7 @@ new Vue({
     render (h){
         return h(App);
     },
-    router : router,
+    //将store对象传给router
+    router : router(store),
     store
 });

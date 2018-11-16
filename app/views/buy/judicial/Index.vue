@@ -1,7 +1,6 @@
 <template>
     <div>
-        我是根组件App
-        <router-view></router-view>
+        我是司法拍卖组件
     </div>
 </template>
 
