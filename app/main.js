@@ -9,6 +9,9 @@ import App from './App';
 import router from './router';
 //引入状态仓库
 import storeObj from './stores';
+//引入过滤器
+import selfround from './filters/selfround';
+import selfgetyear from './filters/selfgetyear';
 
 //安装插件
 Vue.use(iview);
@@ -17,6 +20,10 @@ Vue.use(VueRouter);
 
 //创建store对象
 const store = new Vuex.Store(storeObj);
+
+//定义过滤器
+Vue.filter('selfround', selfround);
+Vue.filter('selfgetyear', selfgetyear);
 
 new Vue({
     el : '#app',
