@@ -2,7 +2,7 @@
     <div>
         <div v-if="carinfo.images" class="ca_wrap">
             <ul>
-                <li v-for="item in arr" :class="{'cur' : item.english == nowAlbum}" @click="changeAlbum(item.english)">
+                <li v-for="item in arr" :class="{'cur' : item.english == nowAlbum, [item.english] : true}" @click="changeAlbum(item.english)">
                     {{item.chinese}}({{carinfo.images[item.english].length}})
                 </li>
             </ul>
@@ -61,8 +61,8 @@
                     height:40px;
                     background:#eee;
                     box-sizing:border-box;
-                    margin-right:6px;
-                    margin-bottom:6px;
+                    margin-right:19px;
+                    margin-bottom:19px;
                     color:black;
                     text-align: center;
                     line-height: 40px;
@@ -72,7 +72,15 @@
                     &.cur{
                         background: gold;
                     }
-                }
+
+                    &.inner{
+                        margin-right: 0;
+                    }
+
+                    &.more{
+                        margin-right: 0;
+                    }
             }
         }
+    }
 </style>

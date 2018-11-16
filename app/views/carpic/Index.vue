@@ -57,6 +57,10 @@
             border-left: 1px solid #888;
             box-sizing: border-box;
             padding: 10px;
+            &>div{
+                clear:both;
+                margin-bottom : 30px;
+            }
         }
     }
 </style>
