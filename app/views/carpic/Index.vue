@@ -60,6 +60,7 @@
             &>div{
                 clear:both;
                 margin-bottom : 30px;
+                overflow: hidden;
             }
         }
     }

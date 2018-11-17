@@ -44,7 +44,7 @@
         },
         methods: {
             changeAlbum(album){
-                this.$store.commit('carpicStore/changeNowAlbum', {album});
+                this.$store.dispatch('carpicStore/changeNowAlbum', {album});
             }
         }
     }

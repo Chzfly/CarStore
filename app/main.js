@@ -12,6 +12,8 @@ import storeObj from './stores';
 //引入过滤器
 import selfround from './filters/selfround';
 import selfgetyear from './filters/selfgetyear';
+//引入全局组件
+import PicShow from './components/PicShow';
 
 //安装插件
 Vue.use(iview);
@@ -24,6 +26,9 @@ const store = new Vuex.Store(storeObj);
 //定义过滤器
 Vue.filter('selfround', selfround);
 Vue.filter('selfgetyear', selfgetyear);
+
+//定义全局组件
+Vue.component('PicShow', PicShow);
 
 new Vue({
     el : '#app',
