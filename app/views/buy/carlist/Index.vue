@@ -1,12 +1,19 @@
 <template>
     <div>
-        我是汽车列表组件（我是亲儿子，我爸爸会默认展示我）
+        <MyTable></MyTable>
     </div>
 </template>
 
 <script>
+    import MyTable from './MyTable';
+
     export default {
-        
+        components: {
+            MyTable
+        },
+        beforeCreate(){
+            this.$store.dispatch('findcarStore/fetchCar');
+        }
     }
 </script>
 

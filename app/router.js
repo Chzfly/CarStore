@@ -31,12 +31,14 @@ export default (store) => {
                     {
                         path: 'buy',
                         component: Buy,
-                        name: 'buy',
+                        //此处，带默认子路由的路由不需要加name，因为如果使用link跳转到这个name时，默认的子路由不会被渲染，会造成警告，从逻辑上也造成了不严密，所以，使用link跳转时，直接跳转子路由的name即可。
+                        // name: 'buy',
                         children: [
                             //默认跳转carlist
                             {
                                 path: '',
-                                component: Carlist
+                                component: Carlist,
+                                name: 'buy_default'
                             },
                             {
                                 path: 'ai',
