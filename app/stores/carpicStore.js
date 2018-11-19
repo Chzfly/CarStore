@@ -26,9 +26,9 @@ export default {
         //根据id请求carinfo数据
         async loadData({commit, state}, {id}){
             //改变相册、idx、车辆信息
-            // commit("changeNowAlbum" , {"album" : "view"});
-            // commit("changeNowIdx", {"nowIdx" : 0});
-            // commit("changeCarinfo", {"result" : []});
+            commit("changeNowAlbum" , {"album" : "view"});
+            commit("changeNowIdx", {"nowIdx" : 0});
+            commit("changeCarinfo", {"result" : []});
             console.log("下一步要就是向服务器拉取数据了，当前数据是： ", state.carinfo, state.nowAlbum, state.nowIdx);
             const {result} = await axios.get('/api/carinfo?id=' + id).then((data)=>{
                 return data.data;
