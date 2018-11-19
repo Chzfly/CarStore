@@ -80,6 +80,8 @@
                 }
             },
             setMargin(){
+                console.log(this.id);
+                console.log(this.$refs.picbox);
                 var imgW = (document.documentElement.clientWidth - 320) * 0.9;
                 this.$refs.picbox.style.width = imgW + 'px';
                 this.$refs.picbox.style.marginLeft = - imgW / 2 + 'px';

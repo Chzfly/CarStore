@@ -13,7 +13,7 @@
                 //列表的列定义
                 columns: [],
                 //列表中列定义数据的依据，根据colSort从条目库中选出我们需要的条目作为列表的列定义
-                colSort: ["avatar", "id", "brand", "series", "price", "km"],
+                colSort: ["avatar", "id", "brand", "series", "price", "km", "buydate"],
             }
         },
         computed: {

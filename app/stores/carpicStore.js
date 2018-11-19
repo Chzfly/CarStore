@@ -25,11 +25,10 @@ export default {
     actions: {
         //根据id请求carinfo数据
         async loadData({commit, state}, {id}){
-            //改变相册、idx、车辆信息
+            //重置相册、idx、车辆信息，此处不重置的话，虽然loadData执行完毕后也可以得到我们期待的state数据，但是在数据请求和重新赋值的过程中，state中的carinfo不是空，这就导致Smallpicnav组件的dom会进行上树渲染，并且渲染其中的image使用的是错误的carinfo，所以此处进行重置数据。
             commit("changeNowAlbum" , {"album" : "view"});
             commit("changeNowIdx", {"nowIdx" : 0});
             commit("changeCarinfo", {"result" : []});
-            console.log("下一步要就是向服务器拉取数据了，当前数据是： ", state.carinfo, state.nowAlbum, state.nowIdx);
             const {result} = await axios.get('/api/carinfo?id=' + id).then((data)=>{
                 return data.data;
             });

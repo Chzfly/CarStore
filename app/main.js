@@ -12,6 +12,7 @@ import storeObj from './stores';
 //引入过滤器
 import selfround from './filters/selfround';
 import selfgetyear from './filters/selfgetyear';
+import qianfenfu from './filters/qianfenfu';
 //引入全局组件
 import PicShow from './components/PicShow';
 
@@ -26,6 +27,7 @@ const store = new Vuex.Store(storeObj);
 //定义过滤器
 Vue.filter('selfround', selfround);
 Vue.filter('selfgetyear', selfgetyear);
+Vue.filter('qianfenfu', qianfenfu);
 
 //定义全局组件
 Vue.component('PicShow', PicShow);
