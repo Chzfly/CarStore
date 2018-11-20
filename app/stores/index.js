@@ -2,6 +2,7 @@
 import routerStore from './routerStore';
 import carpicStore from './carpicStore';
 import findcarStore from './findcarStore';
+import comparecarStore from './comparecarStore';
 
 export default {
     modules : {
@@ -9,6 +10,7 @@ export default {
         routerStore,
         //carpic的状态库
         carpicStore,
-        findcarStore
+        findcarStore,
+        comparecarStore
     }
 }

@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import iview from 'iview';
 import VueRouter from 'vue-router';
+import VueDraggable from 'vue-draggable';
 
 //引入根组件
 import App from './App';
@@ -20,6 +21,7 @@ import PicShow from './components/PicShow';
 Vue.use(iview);
 Vue.use(Vuex);
 Vue.use(VueRouter);
+Vue.use(VueDraggable);
 
 //创建store对象
 const store = new Vuex.Store(storeObj);

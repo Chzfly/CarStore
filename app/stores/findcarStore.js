@@ -43,17 +43,21 @@ export default {
     actions: {
         //拉取服务器数据
         async fetchCar({commit, state}){
-            const {page, pagesize, sortby, sortdirection} = state;
-
+            const {page, pagesize, sortby, sortdirection, filters} = state;
+            //对filter进行处理
+            var filtersObj = {};
+            for(let i = 0; i < filters.length; i ++){
+                filtersObj[filters[i].k] = filters[i].v;
+            }
             const {total, results} = await axios.get(
-                '/api/findcar?' + querystring.stringify({page, pagesize, sortby, sortdirection, })
+                '/api/findcar?' + querystring.stringify({page, pagesize, sortby, sortdirection, ...filtersObj})
             ).then(item => item.data);
             //将拉取到的数据存入state中
             commit('changeResults', {results});
             commit('changeTotal', {total});
         },
         //改变filter
-        changeFilters({commit, state, dispatch}, {k, v}){
+        changeFilter({commit, state, dispatch}, {k, v}){
             //判断是修改还是增加
             var isExist = false;
             //遍历filters数组，看是否有传入载荷的这一项
@@ -90,6 +94,7 @@ export default {
             commit('changePage', {page : 1});
             dispatch('fetchCar');
         },
+        //改变排序
         changeSort({commit, dispatch}, {sortby, sortdirection}){
             commit('changeSort', {sortby, sortdirection : sortdirection == 'desc' ? -1 : 1});
             commit('changePage', {page : 1});

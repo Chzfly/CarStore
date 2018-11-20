@@ -1,11 +1,21 @@
 <template>
     <div>
-        <Row v-for="item in filtersControls" :key="item.english">
+        <Row v-for="item in filterControls" :key="item.english">
             <Col :span="3">
                 {{item.chinese}}
             </Col>
             <Col :span="21">
                 <Fuxuankuang v-if="item.type == 'Fuxuankuang'" :english="item.english" :options="item.options"></Fuxuankuang>
+                <Huadongtiao v-if="item.type == 'Huadongtiao'" :min="item.min" :max="item.max" :english="item.english" :conversion="item.conversion"></Huadongtiao>
+                <Riqifanwei v-if="item.type == 'Riqifanwei'" :english="item.english"></Riqifanwei>
+            </Col>
+        </Row>
+        <div style="height:20px;clear:both;"></div>
+        <Row>
+            <Col :span="24">
+                <Tag closable v-for="item in filters" :key="item.k" @on-close="closeHandler(item.k)">
+                    {{getK(item.k)}} ：{{getV(item.k , item.v)}}
+                </Tag>
             </Col>
         </Row>
     </div>
@@ -26,7 +36,7 @@
         data(){
             return {
                 //所有筛选小控件
-                filtersControls: [
+                filterControls: [
                     {
                        'chinese': '颜色',
                        'english': 'color',
@@ -37,7 +47,7 @@
                         "chinese" : "发动机",
                         "english" : "engine",
                         "type" : "Fuxuankuang",
-                        "options" : ["1.0L","1.2L","1.6T","2.0L","2.0T","3.0L","4.0L"]
+                        "options" : ["1.0L","1.2L","1.6T","2.0L","2.0T","3.0L"]
                     },
                     {
                         "chinese" : "排放标准",
@@ -86,8 +96,34 @@
             Huadongtiao,
             Riqifanwei
         },
-        methods: {
+        methods : {
+            //英语名字换中文
+            getK(k){
+                return this.filterControls.filter(item=>item.english == k)[0].chinese;
+            },
+            //规整一下v
+            getV(k , v){
+                //看类型
+                var type = this.filterControls.filter(item=>item.english == k)[0].type;
 
+                //区别
+                if(type == "Fuxuankuang"){
+                    return v.replace(/v/g , " 或 ");
+                }else if(type == "Riqifanwei"){
+                    return v.split("to").map(item=>{
+                        return moment(Number(item)).format("YYYY年MM月DD日");
+                    }).join(" 到 ");
+                }
+                //几个特例
+                if(k == "price"){
+                    return v.split("to").map(item=>item + "万元").join(" 到 ");
+                }else if(k == "km"){
+                    return v.split("to").map(item=>item / 10000 + "万公里").join(" 到 ");
+                }
+            },
+            closeHandler(k){
+                this.$store.dispatch("findcarStore/delFilter", {k})
+            }
         }
     }
 </script>
