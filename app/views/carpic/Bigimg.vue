@@ -32,11 +32,12 @@
             }
         },
         mounted(){
-            var self = this;
             //监听窗口改变尺寸
-            window.addEventListener("resize" , function(){
-                self.setMargin();
-            },true);
+            window.addEventListener("resize" , this.setMargin, true);
+        },
+        //组件下树时去掉监听,此处提醒我要注意组件中对全局添加得监听事件
+        destroyed(){
+            window.removeEventListener('resize', this.setMargin, true);
         },
         methods: {
             goNext(){

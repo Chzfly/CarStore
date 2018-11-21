@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>我是首页</h1>
-        <router-link :to="{name: 'buy_default'}">去买车工作面</router-link>
+        <router-link :to="{name: 'sale'}">去卖车工作面</router-link>
     </div>
 </template>
 
