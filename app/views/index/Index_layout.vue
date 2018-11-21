@@ -11,7 +11,7 @@
                             <Icon type="md-home" />
                             首页
                         </MenuItem>
-                        <MenuItem name="buy">
+                        <MenuItem name="buy_default">
                             <Icon type="ios-cart" />
                             买车
                         </MenuItem>

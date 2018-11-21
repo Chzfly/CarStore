@@ -7,11 +7,13 @@
         </Card>
         <div style="height: 20px"></div>
         <Step1 v-show="step == 1"></Step1>
+        <Step2 v-show="step == 2"></Step2>
     </div>
 </template>
 
 <script>
     import Step1 from './Step1';
+    import Step2 from './Step2';
     export default {
         data(){
             return {
@@ -47,7 +49,8 @@
             }
         },
         components: {
-            Step1
+            Step1,
+            Step2
         }
     }
 </script>
