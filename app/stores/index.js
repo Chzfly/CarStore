@@ -4,6 +4,7 @@ import carpicStore from './carpicStore';
 import findcarStore from './findcarStore';
 import comparecarStore from './comparecarStore';
 import saleStore from './saleStore';
+import meStore from './meStore';
 
 export default {
     modules : {
@@ -13,6 +14,7 @@ export default {
         carpicStore,
         findcarStore,
         comparecarStore,
-        saleStore
+        saleStore,
+        meStore
     }
 }

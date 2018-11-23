@@ -27,6 +27,9 @@
                             <Icon type="ios-car" />
                             停车场
                         </MenuItem>
+                        <div class="meinfo">
+                            欢迎你{{meinfo.name}}
+                        </div>
                     </div>
                 </Menu>
             </Header>
@@ -41,6 +44,9 @@
         computed: {
             columnName(){
                 return this.$store.state.routerStore.columnName;
+            },
+            meinfo(){
+                return this.$store.state.meStore;
             }
         },
         methods: {

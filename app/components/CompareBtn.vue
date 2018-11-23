@@ -4,15 +4,18 @@
         <div class="compareBtn" @click="showDrawer">
             {{$store.state.comparecarStore.arr.length}}
         </div>
+        <Drawer title="Basic Drawer" :closable="false" :value="isOpen" @on-close="closeDrawer">
+            <ul>
+                <li v-for="item in getCompareArr" :key="item.id">
+                    {{item}}
+                </li>
+            </ul>
+        </Drawer>
     </div>
 </template>
 
 <script>
-    import CompareCar from './CompareCar';
     export default {
-        components: {
-            CompareCar
-        },
         data(){
             return{
                 isOpen: false
@@ -24,6 +27,11 @@
             },
             closeDrawer(){
                 this.isOpen = false;
+            }
+        },
+        computed : {
+            getCompareArr(){
+                return this.$store.state.comparecarStore.arr;
             }
         }
     }
