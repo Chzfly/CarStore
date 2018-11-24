@@ -28,19 +28,39 @@
                             停车场
                         </MenuItem>
                         <div class="meinfo">
-                            欢迎你{{meinfo.name}}
+                            <Poptip placement="bottom">
+                                <div slot="content" class="content_slot">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0)" @click="showModal()">修改头像</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">注销登陆</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <Avatar v-if="!meinfo.avatar" icon="ios-person" shape="square"/>
+                                <Avatar v-if="meinfo.avatar" :src="meifo.avatar"/>
+                            </Poptip>
+                            欢迎你,{{meinfo.name}}。
                         </div>
                     </div>
                 </Menu>
             </Header>
         </Layout>
-        
         <router-view></router-view>
+        <!-- 修改头像组件 -->
+        <ChangeAvatar v-if="isModalShow" @close="closeModal"></ChangeAvatar>
     </div>
 </template>
 
 <script>
     export default {
+        data(){
+            return {
+                isModalShow: false
+            }
+        },
         computed: {
             columnName(){
                 return this.$store.state.routerStore.columnName;
@@ -52,6 +72,12 @@
         methods: {
             selectHandler (name){
                 this.$router.push({name});
+            },
+            showModal(){
+                this.isModalShow = true;
+            },
+            closeModal(){
+                this.isModalShow = false;
             }
         }
     }
@@ -76,11 +102,23 @@
         left: 20px;
     }
     .layout-nav{
-        width: 580px;
+        width: 750px;
         margin: 0 auto;
         margin-right: 20px;
     }
     .ivu-menu-horizontal .ivu-menu-item{
         font-size:20px;
+    }
+    .meinfo{
+        float: left;
+        color: white;
+        cursor: pointer;
+    }
+    .content_slot{
+        text-align: center;
+        a{
+            line-height: 30px;
+            font-size: 16px;
+        }
     }
 </style>

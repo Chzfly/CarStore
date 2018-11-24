@@ -16,6 +16,7 @@ import selfgetyear from './filters/selfgetyear';
 import qianfenfu from './filters/qianfenfu';
 //引入全局组件
 import PicShow from './components/PicShow';
+import ChangeAvatar from './components/ChangeAvatar';
 
 //安装插件
 Vue.use(iview);
@@ -33,6 +34,7 @@ Vue.filter('qianfenfu', qianfenfu);
 
 //定义全局组件
 Vue.component('PicShow', PicShow);
+Vue.component('ChangeAvatar', ChangeAvatar);
 
 new Vue({
     el : '#app',

@@ -16,7 +16,6 @@ export default {
             state.type = type;
             state.department = department;
             state.avatar = avatar;
-            console.log(username)
         }
     }
 }
