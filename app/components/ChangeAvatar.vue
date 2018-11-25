@@ -3,27 +3,33 @@
         <Modal
             title="更改头像"
             @on-cancel="cancel"
-            @on-ok="cancel"
+            @on-ok="okHandler"
             v-model="modal"
             :width="modalW"
             class-name="vertical-center-modal">
+            <!-- 第一步 -->
             <div v-if="step == 1">
                 <input type="file" ref="file" @change="changeHandler" hidden>
                 <Button @click="uploadBundle">选择本地图片</Button>
                 <p>只能上传jpg、png类型图片</p>
             </div>
+            <!-- 第二步 -->
             <div v-if="step == 2">
                 <Progress :percent="percent" status="active"></Progress>
             </div>
-            <div v-if="step == 3" style="overflow:hidden;">
-                <img style="float:left;" :src="picurl" :style="{'width' : picW + 'px' , 'height' : picH + 'px'}">
-                <div style="float:left;height:240px;"></div>
+            <!-- 第三步 -->
+            <div v-if="step == 3">
+                <div class="cut_wrapper" :style="{'width' : picW + paddingRight + 'px' , 'height' : (picH > 280 ? picH : 280) + 'px'}">
+                    <CutPic :cutInfo="cutInfo" :picurl="picurl" :picW="picW" :picH="picH" :picRealW="picRealW" :picRealH="picRealH"></CutPic>
+                </div>
             </div>
         </Modal>
     </div>
 </template>
 
 <script>
+    import CutPic from './CutPic';
+    import axios from 'axios';
     export default {
         data(){
             return {
@@ -39,8 +45,17 @@
                 picRealH: 0,
                 picW: 0,
                 picH: 0,
-                picurl: ''
+                picurl: '',
+                cutInfo: {
+                    cut_rect_x: 0,
+                    cut_rect_y: 0,
+                    cut_rect_w: 60,
+                    cut_rect_h: 60
+                }
             }
+        },
+        components: {
+            CutPic
         },
         computed: {
             modalW(){
@@ -54,6 +69,20 @@
         methods: {
             cancel(){
                 this.$emit("close");
+            },
+            okHandler(){
+                //图片裁剪尺寸确定后发出请求，后台进行裁剪
+                axios.post('/api/cut', {
+                    picurl : this.picurl,
+                    cut_rect_x : this.cutInfo.cut_rect_x,
+                    cut_rect_y : this.cutInfo.cut_rect_y,
+                    cut_rect_w : this.cutInfo.cut_rect_w,
+                    cut_rect_h : this.cutInfo.cut_rect_h,
+                    picRealW : this.picRealW,
+                    picRealH : this.picRealH,
+                    picW : this.picW,
+                    picH : this.picH
+                });
             },
             changeHandler(){
                 //当选定文件后，input框发生改变的事件
@@ -70,7 +99,7 @@
                 xhr.onreadystatechange = function (){
                     if(xhr.readyState == 4){
                         var o = JSON.parse(xhr.responseText);
-                        self.picurl = 'http://127.0.0.1:3000/' + o.filename;
+                        self.picurl = o.filename;
                         self.picRealW = o.width;
                         self.picRealH = o.height;
                         self.setWH();

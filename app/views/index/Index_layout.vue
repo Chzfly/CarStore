@@ -40,7 +40,7 @@
                                     </ul>
                                 </div>
                                 <Avatar v-if="!meinfo.avatar" icon="ios-person" shape="square"/>
-                                <Avatar v-if="meinfo.avatar" :src="meifo.avatar"/>
+                                <Avatar v-if="meinfo.avatar" :src="'http://127.0.0.1:3000/' + meinfo.avatar"/>
                             </Poptip>
                             欢迎你,{{meinfo.name}}。
                         </div>
