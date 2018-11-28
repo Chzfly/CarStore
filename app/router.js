@@ -13,6 +13,7 @@ import Ai from './views/buy/ai';
 import Carlist from './views/buy/carlist';
 import Judicial from './views/buy/judicial';
 import Login from './views/login';
+import Compare from "./views/buy/compare";
 
 
 export default (store) => {
@@ -33,28 +34,47 @@ export default (store) => {
                         path: 'buy',
                         component: Buy,
                         //此处，带默认子路由的路由不需要加name，因为如果使用link跳转到这个name时，默认的子路由不会被渲染，会造成警告，从逻辑上也造成了不严密，所以，使用link跳转时，直接跳转子路由的name即可。
-                        // name: 'buy',
+                        name: 'buy',
                         children: [
                             //默认跳转carlist
                             {
                                 path: '',
-                                component: Carlist,
-                                name: 'buy_default'
+                                redirect: {
+                                    name: 'carlist'
+                                }
                             },
                             {
                                 path: 'ai',
                                 component: Ai,
-                                name: 'ai'
+                                name: 'ai',
+                                meta : {
+                                    showRightbar: true
+                                }
+                                
                             },
                             {
                                 path: 'carlist',
                                 component: Carlist,
-                                name: 'carlist'
+                                name: 'carlist',
+                                meta : {
+                                    showRightbar: true
+                                }
                             },
                             {
                                 path: 'judicial',
                                 component: Judicial,
-                                name: 'judicial'
+                                name: 'judicial',
+                                meta : {
+                                    showRightbar: true
+                                }
+                            },
+                            {
+                                path: "compare",
+                                component: Compare,
+                                name: "compare",
+                                meta: {
+                                    showRightbar: true
+                                }
                             }
                         ]
                     },
@@ -81,7 +101,10 @@ export default (store) => {
             {
                 path: '/carpic/:id',
                 component: Carpic,
-                name: 'carpic'
+                name: 'carpic',
+                meta: {
+                    showRightbar: true
+                }
             },
             {
                 path: '/login',
@@ -122,6 +145,8 @@ export default (store) => {
                 name : to.fullPath.match(/\/index\/\w+\/(\w+)/)[1]
             });
         }
+        //显示右边条
+        store.commit("rightbarStore/changeIsShowRightBar", { "isShowRightbar": to.meta.showRightbar ? true : false});
     });
 
     return router;

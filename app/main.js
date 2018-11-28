@@ -14,6 +14,7 @@ import storeObj from './stores';
 import selfround from './filters/selfround';
 import selfgetyear from './filters/selfgetyear';
 import qianfenfu from './filters/qianfenfu';
+import getyearfromtimestamp from './filters/getyearfromtimestamp';
 //引入全局组件
 import PicShow from './components/PicShow';
 import ChangeAvatar from './components/ChangeAvatar';
@@ -31,6 +32,7 @@ const store = new Vuex.Store(storeObj);
 Vue.filter('selfround', selfround);
 Vue.filter('selfgetyear', selfgetyear);
 Vue.filter('qianfenfu', qianfenfu);
+Vue.filter('getyearfromtimestamp', getyearfromtimestamp);
 
 //定义全局组件
 Vue.component('PicShow', PicShow);

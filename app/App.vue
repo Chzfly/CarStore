@@ -1,16 +1,24 @@
 <template>
-<!-- 大图组件更改窗口尺寸时报错，待解决 -->
     <div>
         <router-view></router-view>
+        <RightBar v-if="isShowRightbar"></RightBar>
     </div>
 </template>
 
 <script>
+    import RightBar from './components/RightBar';
     export default {
-        
+        components: {
+            RightBar
+        },
+        computed: {
+            isShowRightbar(){
+                return this.$store.state.rightbarStore.isShowRightbar;
+            }
+        }
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 
 </style>

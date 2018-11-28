@@ -129,7 +129,13 @@
         },
         methods: {
             handleSubmit(){
-                this.$refs._form.validate(data => console.log(data));
+                var self = this;
+                //校验整个表单
+                this.$refs._form.validate(data=>{
+                    //校验通过之后
+                    self.$store.commit("saleStore/changeStep1Form" , {step1Form : self.formData});
+                    self.$store.commit("saleStore/changeStep" , {"step" : 2});
+                });
             }
         }
     }

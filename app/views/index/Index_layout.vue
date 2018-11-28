@@ -11,7 +11,7 @@
                             <Icon type="md-home" />
                             首页
                         </MenuItem>
-                        <MenuItem name="buy_default">
+                        <MenuItem name="buy">
                             <Icon type="ios-cart" />
                             买车
                         </MenuItem>
@@ -71,6 +71,9 @@
         },
         methods: {
             selectHandler (name){
+                if(name == 'buy'){
+                    name = 'carlist';
+                }
                 this.$router.push({name});
             },
             showModal(){
@@ -92,8 +95,8 @@
         overflow: hidden;
     }
     .layout-logo{
-        width: 100px;
-        height: 30px;
+        width: 350px;
+        height: 40px;
         background: #5b6270;
         border-radius: 3px;
         float: left;

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <CompareCar :isOpen="isOpen" @close="closeDrawer"></CompareCar>
+        <!-- <CompareCar :isOpen="isOpen" @close="closeDrawer"></CompareCar> -->
         <div class="compareBtn" @click="showDrawer">
             {{$store.state.comparecarStore.arr.length}}
         </div>

@@ -83,6 +83,7 @@
                     picW : this.picW,
                     picH : this.picH
                 });
+                window.location.reload();
             },
             changeHandler(){
                 //当选定文件后，input框发生改变的事件
