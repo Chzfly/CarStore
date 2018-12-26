@@ -1,17 +1,14 @@
 # CarStore
 ## 二手车售卖管理系统
-
 ------
 
-前端： `Vue vuex iview vue2-dropzone vue-draggable`
-后端： `NodeJS express mockjs mongoose`
-
-> * 首页展示：海报轮播、影片展示列表
-> * 城市切换
-> * 用户界面
-> * 电影详情展示
-> * 评论区展示
-> * 座位选择
+### 主要技术栈
+> * 前端： `Vue` `vuex` `iview`
+> * 后端： `NodeJS` `express` `mockjs` `mongoose`
+> * 数据库： `MongoDB`
+> * 打包工具： `webpack`
+> * 应用的依赖： `vue2-dropzone` `vue-draggable` `moment` `axios` `gm`
+> * 
 ### 项目总结
 > * 使用构建工具create-react-app构建项目
 > * 样式：使用css预处理器sass编写样式，默认样式引用了normalize.css，将常用单个样式在_util.scss中进行了封装，常用组件样式也在common.scss中进行了分离，利用flex进行自适应布局
