@@ -10,9 +10,9 @@
             </Sider>
             <Layout :style="{padding: '0 24px 24px'}">
                 <Breadcrumb :style="{margin: '24px 0'}">
-                    <BreadcrumbItem>Home</BreadcrumbItem>
-                    <BreadcrumbItem>Components</BreadcrumbItem>
-                    <BreadcrumbItem>Layout</BreadcrumbItem>
+                    <BreadcrumbItem>主页</BreadcrumbItem>
+                    <BreadcrumbItem>买车</BreadcrumbItem>
+                    <BreadcrumbItem>列表选车</BreadcrumbItem>
                 </Breadcrumb>
                 <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
                     <router-view></router-view>
