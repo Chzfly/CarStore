@@ -22,7 +22,7 @@
 
 ### 项目展示
 #### 登陆验证
-<img src="https://github.com/Chzfly/CarStore/blob/master/captures/login.png"/>
+<img src="https://github.com/Chzfly/CarStore/blob/master/captures/login.png" width="400px"/>
 #### 列表展示、带筛选功能（包括单选、复选、日期范围、公里数范围、颜色、车系和品牌嵌套）
 <img src="https://github.com/Chzfly/CarStore/blob/master/captures/tableshow.png"/>
 #### 列表排序，分页
