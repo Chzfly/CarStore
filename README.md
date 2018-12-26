@@ -3,40 +3,22 @@
 ------
 
 ### 主要技术栈
+
 > * 前端： `Vue` `vuex` `iview`
 > * 后端： `NodeJS` `express` `mockjs` `mongoose`
 > * 数据库： `MongoDB`
 > * 打包工具： `webpack`
-> * 应用的依赖： `vue2-dropzone` `vue-draggable` `moment` `axios` `gm`
-> * 
+> * 应用的依赖： `vue2-dropzone` `vue-draggable` `moment` `axios` `gm` `less`
+
 ### 项目总结
-> * 使用构建工具create-react-app构建项目
-> * 样式：使用css预处理器sass编写样式，默认样式引用了normalize.css，将常用单个样式在_util.scss中进行了封装，常用组件样式也在common.scss中进行了分离，利用flex进行自适应布局
-> * 通用组件：在components中进行封装
-> * 主要部分：在routes文件夹下进行编写
-> * 路由：使用react-router-dom中的BrowserRouter和Route
-> * 接口：使用了easy-mock进行接口模拟
-> * 状态管理： seat部分多个组件共用状态，使用redux管理
-#### components通用组件，许多页面都需要的可复用的组件
-> * LineLink：单行链接组件
-> * CollapsibleText：可折叠和展开的文字段落组件
-> * Star：五星评分组件
-> * TabMenu：tab切换组件
-#### home: 主页面
-> * TopBar：城市按钮，搜索区域，扫码按钮
-> * MovieItem：电影列表
-> * Slide：轮播海报
-> * CityLayer：城市切换页面
-#### detail: 电影详情页面
-> * Artist：演员列表
-> * BaseInfo：影片基本信息
-> * CommentList：评论列表
-> * ScoreDistribute：评分分布
-> * TagList：评分分类选项
-#### Seat: 选座页面
-> * MovieInfo：电影信息
-> * SeatSelected：已选座位列表和确认选座按钮
-> * SeatSelector：座位图
+
+> * 部署模拟接口：基础数据导入MongoDB数据库中，使用NodeJS、express搭建后端框架，开启后端服务。其中结合mockjs编写查询接口，利用GraphicsMagick处理图片文件。
+> * 路由： `vue-router` （应用路由守卫全局后置钩子`router.afterEach`进行登陆检测）
+> * 状态管理： `vuex` 在stores文件夹中
+> * components： 全局通用组件
+> * filters： 全局过滤器
+> * views： 视图文件
+> * 样式： 采用css预处理器less编写
 
 ### 项目展示
 
