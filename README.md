@@ -21,5 +21,5 @@
 > * 样式： 采用css预处理器less编写
 
 ### 项目展示
-
-<img src="https://github.com/Chzfly/projectBT/blob/master/capture/show.gif"/>
+#### 列表展示
+<img src="https://github.com/Chzfly/CarStore/blob/master/captures/tableshow.png"/>
