@@ -12,7 +12,7 @@
 
 ### 项目总结
 
-> * 部署模拟接口：基础数据导入MongoDB数据库中，使用NodeJS、express搭建后端框架，开启后端服务。其中结合mockjs编写查询接口，利用GraphicsMagick处理图片文件。
+> * 部署模拟接口：基础数据导入MongoDB数据库中，使用NodeJS、express搭建后端框架，开启后端服务。其中结合mockjs编写查询接口，利用GraphicsMagick处理图片文件
 > * 路由： `vue-router` （应用路由守卫全局后置钩子`router.afterEach`进行登陆检测）
 > * 状态管理： `vuex`  在stores文件夹中
 > * components： 全局通用组件
