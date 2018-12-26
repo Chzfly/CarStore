@@ -21,27 +21,39 @@
 > * 样式： 采用css预处理器less编写
 
 ### 项目展示
+
 #### 登陆验证
 <img src="https://github.com/Chzfly/CarStore/blob/master/captures/login.png" width="400px"/>
+
 #### 列表展示、带筛选功能（包括单选、复选、日期范围、公里数范围、颜色、车系和品牌嵌套）
 <img src="https://github.com/Chzfly/CarStore/blob/master/captures/tableshow.png"/>
+
 #### 列表排序，分页
 <img src="https://github.com/Chzfly/CarStore/blob/master/captures/sortandpage.png"/>
+
 #### 用户自定义列表
 <img src="https://github.com/Chzfly/CarStore/blob/master/captures/customtable.gif"/>
+
 #### 加入对比
 <img src="https://github.com/Chzfly/CarStore/blob/master/captures/addcompare.png"/>
+
 #### 取消对比
 <img src="https://github.com/Chzfly/CarStore/blob/master/captures/cancelcompare.png"/>
+
 #### 对比确认模态框
 <img src="https://github.com/Chzfly/CarStore/blob/master/captures/comparemodal.png"/>
+
 #### 对比界面
 <img src="https://github.com/Chzfly/CarStore/blob/master/captures/comparetable.png"/>
+
 #### 头像编辑上传
 <img src="https://github.com/Chzfly/CarStore/blob/master/captures/avatareditor.gif"/>
+
 #### 表单提交
 <img src="https://github.com/Chzfly/CarStore/blob/master/captures/form.png"/>
+
 #### 上传图片
 <img src="https://github.com/Chzfly/CarStore/blob/master/captures/uploadimage.gif"/>
+
 #### 图片展示
 <img src="https://github.com/Chzfly/CarStore/blob/master/captures/carshow.png"/>
