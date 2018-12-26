@@ -50,10 +50,10 @@
 <img src="https://github.com/Chzfly/CarStore/blob/master/captures/avatareditor.gif"/>
 
 #### 表单提交
-<img src="https://github.com/Chzfly/CarStore/blob/master/captures/form.png"/>
+<img src="https://github.com/Chzfly/CarStore/blob/master/captures/form.png" width="400px"/>
 
 #### 上传图片
 <img src="https://github.com/Chzfly/CarStore/blob/master/captures/uploadimage.gif"/>
 
 #### 图片展示
-<img src="https://github.com/Chzfly/CarStore/blob/master/captures/carshow.png"/>
+<img src="https://github.com/Chzfly/CarStore/blob/master/captures/carshow.png" width="400px"/>
